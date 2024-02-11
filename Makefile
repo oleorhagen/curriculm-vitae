@@ -1,6 +1,6 @@
 
 all:
-	tex --output-dir=build vita.tex
+	pdflatex --output-dir=build vita.tex
 
 sannsyn:
 	pdflatex --output-dir=build interest-letters/sannsyn.latex

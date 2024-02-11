@@ -1,132 +1,125 @@
-% This page defines the format for Vitas
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newtheorem{theorem}{Theorem}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{trees}
+\usepackage{soul}
+\usepackage{csquotes} % \begin{displayquote}
+\date{\today}
+\title{Curriculum Vitae}
+\hypersetup{
+  pdfauthor={},
+  pdftitle={},
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs},
+  pdflang={English}}
 
-\font\tentt=cmtt10
-\font\sltt=cmsltt10
-\let\mainfont=\tenrm
-
-\font\tenssb=cmssbx10
-\font\twelvess=cmss10 at 12pt
-\font\ninerm=cmr9
-\font\eightrm=cmr8
-\font\eightsl=cmsl8
-\def\sc{\eightrm}
-
-\def\TeX{T\hbox{\hskip-.1667em\lower.424ex\hbox{E}\hskip-.125em X}}
-\font\logo=manfnt % font used for the METAFONT logo
-\def\MF{{\logo META}\-{\logo FONT}\spacefactor1000\relax}
-\def\slMF{{\logo 89:;}\-{\logo <=>:}} % slanted version
-\let\,=\thinspace
-\def\?{\mkern-1mu}
-\chardef\_=`\_
-
-\def\og#1{\leavevmode\smash{\vtop{% crude approximation of Polish ogonek
-  \baselineskip0pt\lineskip0pt\lineskiplimit0pt
-  \ialign{##\crcr\relax#1\cr
-    \hidewidth\kern.2em
-    \dimen0=.0040ex \multiply\dimen0\fontdimen1\font
-    \kern-.0156\dimen0`\hidewidth\cr}}}}
-
-\def\p #1.{\vskip 3pt plus 2pt minus 1pt
- \noindent\hbox to 20pt{\hss\bf#1. }\hangindent 20pt\ignorespaces}
-
-\outer\def\finishpage{\par\vfill\eject}
-
-\def\\{\par\hangindent 20pt\noindent\ignorespaces}
-
-\outer\def\sectionbegin #1. #2{\vskip 0pt plus 400pt\penalty-100
- \vskip 12pt plus -394pt minus 4pt
- \noindent\tenssb\hbox to 0pt{\hss#1. }#2
- \par\penalty10000\vskip 3pt plus 2pt minus 1pt\rm}
-
-\def\pat#1 {\par\noindent
- \hbox to 40pt{\hss #1\hskip 5pt}\hangindent 40pt\ignorespaces}
-
-\def\yskip {\vskip 3pt plus 2pt minus 1pt}
-\def\yyskip {\penalty-100\vskip 6pt plus 4pt minus 2pt}
-\def\xskip {\hskip 7pt plus 3pt minus 4pt}
-
-\def\star{\hbox to 0pt{\hss *}}
-
-\newdimen\unicodeptsize \unicodeptsize=10pt
-
-\begingroup
-\catcode`@=11 % we will define two private macro names
-
-\gdef\Uni#1:#2:#3:#4:#5<#6>% ems:cols:rows:-hoff:rows+voff<hexbitmap>
- {\leavevmode \hbox to#1\unicodeptsize
-    {\special{" 0 0 moveto currentpoint translate
-                \unic@deptsize \unic@deptsize scale #2 #3 true
-                [24 0 0 -24 #4 #5] {<#6>} imagemask}\hss}}
-\gdef\NUni#1:#2:#3:#4:#5<#6>% ems:cols:rows:-hoff:rows+voff<hexbitmap>
- {\leavevmode \hbox to#1\unicodeptsize
-    {\special{" 0 0 moveto currentpoint translate
-                \unic@deptsize \unic@deptsize scale #2 #3 true
-                [74 0 0 -74 #4 #5] {<#6>} imagemask}\hss}}
-
-{\catcode`p=12\catcode`t=12\gdef\uni@ff#1pt{#1}}
-\gdef\unic@deptsize{\expandafter\uni@ff\the\unicodeptsize\space}
-
-\endgroup
-
-\def\today{\ifcase\month\or
-  January\or February\or March\or April\or May\or June\or
-  July\or August\or September\or October\or November\or December\fi
-  \space\number\day, \number\year}
-
-%%%%%
-
-\line{\twelvess CURRICULUM VIT\kern-1.5pt\AE\hfill\eightrm\today}
-\vskip 10pt
-
-\sectionbegin 1. {Biographical and Personal Information}
-\\Ole P. Orhagen, born August 21, 1989, Gj{\o}vik, Oppland, Norway; Norwegian citizen.
-\sectionbegin 2. {Academic History}
-\\University of the Sunshine Coast, September 2010 -- June 2014; B.S., Major English, Minor Mathematics.
-\\University of Oslo, September 2014 -- May 2019; B.S. Computer Science, M.Sc. in
-Cyber\-n\-e\-tics, May 2019. Thesis: ``The RRT Funnel Algorithm.''
-
-\sectionbegin 3. {Employment Record}
-\\Teacher's Assistant, University of Oslo, Oslo, 2015--2016.
-\\Intern, Northern.tech, Oslo, 2016--2019.
-\\Junior Software Engineer, Northern.tech, Oslo, 2019--2021.
-\\Software Engineer, Northern.tech, Oslo, 2021--2022.
-\\Senior Software Engineer, Northern.tech, Oslo, 2022--
-
-\sectionbegin 4. {Publications}
-
-\\ \star Orhagen, Ole Petter. The development of the RRT-Funnel motion planning algorithm. MS thesis. 2019, link: {\tt https://www.duo.uio.no/handle/10852/69325}.
-\\ \star Orhagen, Ole Petter, Marius Thoresen, and Kim Mathiassen. "The rapidly exploring random tree funnel algorithm." 2022 8th International Conference on Mechatronics and Robotics Engineering (ICMRE). IEEE, 2022, link: {\tt https://ieeexplore.ieee.org/abstract/document/9734089}.
+%
+% arg1 - employer
+% arg2 - position
+% arg3 - timeline
+\newenvironment*{experience}[3]{
+  \par\noindent\rule{\textwidth}{0.4pt}
+  #1 \\
+  #2 \\
+  #3 \\
+  \par\noindent\rule{\textwidth}{0.4pt}
+}
+{\par\noindent\rule{\textwidth}{0.4pt}} % enddef empty for now
 
 
-\sectionbegin 5. {References}
-\\ \star Amlie, Kristian. Collegue, Principal Engineer (kristian.amlie@northern.tech)
-\\ \star Campos, Lluis. Collegue, Senior Engineer (lluis.campos@northern.tech)
+\begin{document}
 
-\finishpage
+\section{Bio}
 
-\sectionbegin 6. {Skillset}
-\\ Languages:
-\\ \star Golang, Python, C++, C, Javascript
+\section{Nøkkelferdigheter}
 
-\\ Build Systems
-\\ \star Yocto, Buildroot, Autotools, CMake
+\section{Arbeids og Prosjekterfaring}
 
-\\ Cloud Technologies
-\\ \star k8s
+\begin{experience}{Northern.tech}{Senior Software Engineer}{2021-2024}
+  Ole Petter har siden 2021 jobbet som seniorutvikler, hvilket medfører større
+  ansvar. Blant annet har han vært mentor for nyansatte, og hatt hovedansvaret
+  for deler av kodebasen. Han har hatt ansvaret for å release software til
+  kundene og holde en backlog vedlike for utvikler-teamet. Han har innført ny
+  automatisk software-release-metodikk og hjulpet andre utviklere i hverdagen
+  deres igjennom å adressere interne flaskehalser i utviklingsprosessen. Gjennom
+  denne rollen fikk han også erfaring med andre arbeidsmetoder, som Kanban.
+\end{experience}
 
-\\ Packaging
-\\ \star Debian
+\begin{experience}{Northern.tech}{Head of Q.A.}{2021-2022}
+  Ole Petter hadde i ett år hovedansvaret for testing hos Northern.tech. Dette innebar å følge opp og sikre at
+  produktene oppfyller høye kvalitetsstandarder før de ble levert til kundene. Som en del av QA-ansvaret organiserte
+  han en egen backlog og samlet statistikk over utført arbeid. Han introduserte også hardware-testing, i tillegg til den
+  eksisterende emulerte testingen som var gjort fra før.
+\end{experience}
 
-\sectionbegin 7. {Roles and Responsibilities}
+\begin{experience}{Northern.tech}{Software Engineer}{2020-2021}
 
-\\ \star Head of Quality Assurance, 2021--2022
+  I rollen som Software Engineer fikk Ole Petter ansvaret for å lede og designe ny
+  funksjonalitet for selskapets produkter. Dette involverte omfattende
+  undersøkelser for å forstå kundenes behov, designprosesser, oppgaveinndeling og
+  implementering i samarbeid med teamet.
 
-\\ \star Project Lead, Customer Python deliverable, January 2020 -- May 2020
+\end{experience}
 
-\sectionbegin 8. {Online Profiles}
+\begin{experience}{MacGregor}{Løsningsarkitekt og Prosjektleder}{01.01.2020-01.06.2020}
+Beskrivelse
+MacGregor er en global leverandør av ingeniørløsninger for marinesektoren.
+Prosjektet involverte utviklingen av en oppdateringsklient som skulle integreres med en eksisterende OTA-løsning i
+Python, spesifikt laget for PowerPC-plattformen. Den utviklede løsningen måtte være robust og konstruert for å
+fungere på skip over lengre perioder uten tilsyn.
+Med tre utviklere og en tidshorisont på seks måneder ble prosjektet nøye overvåket av kunden, som var aktivt
+involvert gjennom hele utviklingsprosessen. Dette inkluderte testing, kravspesifikasjon og leveransemetodikk.
+Arbeidsmetoden som ble benyttet var Kanban, og teamet opererte uavhengig av resten av selskapet.
 
-\\ \star GitHub: https://github.com/oleorhagen/
+Ansvar
 
-\\ \star LinkedIn: https://no.linkedin.com/in/ole-petter-orhagen-ab6943187
+Ole Petter fungerte som prosjektleder og løsningsarkitekt. Han hadde ansvaret for designet av løsningen, brøt ned
+oppgavene og samarbeidet aktivt med utviklingsteamet gjennom hele prosessen. Produktet gjennomgikk
+automatisk testing i flere stadier, inkludert kundens hardware, som en integrert del av CI/CD-prosessen for
+prosjektet.
 
-\end
+\end{experience}
+
+\begin{experience}{Northern.tech}{Junior Software Engineer}{2018-2020}
+  Beskrivelse
+  I rollen som Jr. Software Engineer utførte Ole Petter betydelig arbeid ved å implementere ny funksjonalitet i
+  eksisterende produkter. Han fullførte også oppgaver som allerede var nedbrutt og tildelt av lagets leder. Denne
+  erfaringen utviklet hans evne til å arbeide systematisk og målrettet, og samtidig ble han komfortabel med å jobbe i
+  team under SCRUM-metodologien.
+
+\end{experience}
+
+\begin{experience}{Forsvarets Forskningsinstitutt}{Midlertidig ansatt}{01.08.2019-01.01.2020}
+  Beskrivelse
+  Etter fullføringen av Ole Petters mastergrad fikk han en deltidskontrakt ved Forsvarets forskningsinstitutt. Her
+  fortsatte han oppfølgingen av masteroppgaven sin i samarbeid med en professor og Ph.D.-studenter. Resultatet av
+  dette samarbeidet var en ny forskningsartikkel som bygde videre på Ole Petters arbeid. Denne erfaringen bidro til å
+  utvikle hans evne til å jobbe strukturert og følge klart definerte prosesser, spesielt i forbindelse med
+  artikkel-levering og -publisering.
+\end{experience}
+
+\begin{experience}{Northern.tech}{Software Intern}{2016-2019}
+  Beskrivelse
+  I rollen som Software Intern, jobbet Ole Petter deltid (40%) og fikk anledning til å utforske flere ulike aspekter av
+  selskapet. Han var involvert i en rekke oppgaver, inkludert QA, testing, vedlikehold av selskapets legacy-produkt
+  (CFEngine), til utvikling av ny funksjonalitet på det eksisterende produktet (Mender).
+\end{experience}
+
+\section{Kurs}
+
+\section{Utdanning}
+
+\end{document}
