@@ -1,3 +1,3 @@
 
 all:
-	tex --output-dir=build vita.tex
+	./build.sh tex vita.tex
