@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+echo >&2 "Usage: ./build.sh <compiler> <file>"
 
 IMAGE=blang/latex:ubuntu
 exec docker run                 \
